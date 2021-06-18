@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Guitar Shop: магазин гитар
+
+:rocket: Проект выполняется в Акселераторе HTML Academy.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

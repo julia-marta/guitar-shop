@@ -1,0 +1,28 @@
+html{
+  height: 100%;
+}
+
+body {
+  @include indents-none;
+  height: 100%;
+  font-family: "Droid Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: $main-text;
+  background-color: $main-background;
+}
+
+a {
+  color: $main-text;
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  flex-grow: 1;
+}
