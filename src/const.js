@@ -1,4 +1,4 @@
-export const HEADER_MENU_ITEMS = [`Услуги`, `Рассчитать кредит`, `Конвертер валют`, `Контакты`];
+export const HEADER_MENU_ITEMS = [`Каталог`, `Где купить?`, `О компании`, `Cервис-центры`];
 
 export const USER_MENU_ITEMS = [
   {
@@ -22,13 +22,13 @@ export const IconType = {
     height: 18,
   },
   MAP: {
-    name: `basket`,
-    width: 16,
-    height: 18,
+    name: `map`,
+    width: 40,
+    height: 40,
   },
   SEARCH: {
-    name: `basket`,
-    width: 16,
-    height: 18,
+    name: `search`,
+    width: 40,
+    height: 40,
   },
 };

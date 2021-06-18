@@ -1,0 +1,43 @@
+.menu {
+  @include indents-none;
+  @include list-reset;
+
+  &--main,
+  &--user {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.menu--main .menu__item {
+  margin-right: 40px;
+  line-height: 20px;
+  letter-spacing: 1.05px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.menu--user .menu__item {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  font-weight: 400;
+
+  &:last-child {
+    margin-right: 4px;
+  }
+}
+
+.menu__index {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  font-size: 10px;
+  line-height: 11px;
+  color: $index;
+}

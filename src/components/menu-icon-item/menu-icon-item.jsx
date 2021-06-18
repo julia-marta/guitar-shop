@@ -10,6 +10,7 @@ const MenuIconItem = ({icon, label}) => {
         {/* eslint-disable-next-line */}
         <a className="menu__link" href="#" aria-label={label}>
           <Icon icon={IconType[`${icon.toUpperCase()}`]} />
+          {icon === `basket` && <sup className="menu__index">2</sup>}
         </a>
       </li>
     )
