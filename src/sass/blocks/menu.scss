@@ -4,11 +4,18 @@
 
   &--main,
   &--user,
-  &--social {
+  &--social,
+  &--sorting,
+  &--toggle {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  &--toggle {
+    margin-left: auto;
+    margin-top: -1px;
   }
 
   &--social {
@@ -57,6 +64,23 @@
   }
 }
 
+.menu--sorting .menu__item {
+  margin-right: 32px;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 1.3px;
+}
+
+.menu--toggle .menu__item {
+  width: 22px;
+  height: 22px;
+  margin-right: 14px;
+
+  &:last-child {
+    margin-right: 8px;
+  }
+}
+
 .menu--social .menu__item {
   width: 24px;
   height: 24px;
@@ -83,6 +107,11 @@
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.menu__link {
+  box-sizing: border-box;
+  padding: 5px 0;
 }
 
 .menu__text {

@@ -4,7 +4,7 @@ const Filter = () => {
 
   return (
       <form action="#" className="catalogue__filter filter">
-        <h3>Фильтр</h3>
+        <h3 className="filter__title">Фильтр</h3>
       </form>
   );
 };

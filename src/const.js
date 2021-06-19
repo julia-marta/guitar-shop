@@ -53,6 +53,19 @@ export const FOOTER_MENU_ITEMS = [
   },
 ];
 
+export const SORTING_ITEMS = [`по цене`, `по популярности`];
+
+export const SORTING_TOGGLE_ITEMS = [
+    {
+      type: `toggle_up`,
+      label: `По возрастанию`,
+    },
+    {
+      type: `toggle_down`,
+      label: `По убыванию`,
+    },
+  ];
+
 export const BREADCRUMBS = [`Главная`, `Каталог`, `Оформляем`];
 
 export const AppRoute = {
@@ -110,6 +123,16 @@ export const IconType = {
     name: `search`,
     width: 40,
     height: 40,
+  },
+  TOGGLE_DOWN: {
+    name: `toggle-down`,
+    width: 22,
+    height: 22,
+  },
+  TOGGLE_UP: {
+    name: `toggle-up`,
+    width: 22,
+    height: 22,
   },
   TWITTER: {
     name: `twitter`,

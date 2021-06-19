@@ -8,10 +8,12 @@
 }
 
 .catalogue__content {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  margin-top: 49px;
 }
 
 .catalogue__filter {
@@ -22,5 +24,22 @@
 
 .catalogue__showcase {
   outline: 1px solid fuchsia;
+  box-sizing: border-box;
+  padding-top: 1px;
   flex-grow: 1;
+}
+
+.catalogue__sorting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.catalogue__sorting-title {
+  @include indents-none;
+  margin-right: 18px;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 1.3px;
 }
