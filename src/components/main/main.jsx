@@ -1,9 +1,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {PageTitle} from '../../const';
+import Breadcrumbs from '../breadcrumbs/breadcrumbs';
+import {PageTitle, BREADCRUMBS} from '../../const';
 
-const Main = ({type, children}) => {
+const Main = ({type, children, isMain}) => {
+
+  const breadcrumbs = isMain ? BREADCRUMBS.slice(0, BREADCRUMBS.length - 1) : BREADCRUMBS;
 
   return (
     <main className="main">
@@ -11,6 +14,7 @@ const Main = ({type, children}) => {
       <section className={type}>
         <div className={`${type}__wrapper container`}>
           <h2 className={`${type}__title`}>{PageTitle[`${type.toUpperCase()}`]}</h2>
+          <Breadcrumbs items={breadcrumbs} />
           {children}
         </div>
       </section>

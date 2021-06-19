@@ -1,0 +1,8 @@
+.catalogue__wrapper {
+  padding-top: 14px;
+}
+
+.catalogue__title {
+  @include title(22px);
+  line-height: 24px;
+}

@@ -14,7 +14,7 @@ const Page = ({type}) => {
   return (
     <>
       <Header isMain={isMain} />
-      <Main type={type}>
+      <Main type={type} isMain={isMain}>
         {isMain ? <Catalogue/> : <Cart/>}
       </Main>
       <Footer isMain={isMain} />

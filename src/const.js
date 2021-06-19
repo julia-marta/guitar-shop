@@ -53,6 +53,8 @@ export const FOOTER_MENU_ITEMS = [
   },
 ];
 
+export const BREADCRUMBS = [`Главная`, `Каталог`, `Оформляем`];
+
 export const AppRoute = {
   ROOT: `/`,
   CART: `/cart`,
@@ -69,6 +71,11 @@ export const PageTitle = {
 };
 
 export const IconType = {
+  ARROW: {
+    name: `arrow`,
+    width: 16,
+    height: 16,
+  },
   BASKET: {
     name: `basket`,
     width: 16,

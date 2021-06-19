@@ -1,0 +1,27 @@
+.breadcrumbs {
+  @include list-reset;
+  @include indents-none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 21px;
+}
+
+.breadcrumbs__item:not(:last-child) {
+  position: relative;
+  padding-right: 27px;
+}
+
+.breadcrumbs__item {
+  margin-right: 10px;
+}
+
+.breadcrumbs__link {
+  box-sizing: border-box;
+  padding: 5px 0;
+  font-size: 16px;
+  line-height: 19px;
+  color: $pale-text;
+  letter-spacing: 0.5px;
+}
