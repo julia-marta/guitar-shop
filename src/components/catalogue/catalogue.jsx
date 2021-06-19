@@ -1,9 +1,14 @@
 import React from 'react';
+import Filter from '../filter/filter';
+import Showcase from '../showcase/showcase';
 
 const Catalogue = () => {
 
   return (
-      <h3>Тут будет каталог</h3>
+      <div className="catalogue__content">
+        <Filter/>
+        <Showcase/>
+      </div>
   );
 };
 

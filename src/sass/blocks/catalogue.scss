@@ -6,3 +6,21 @@
   @include title(22px);
   line-height: 24px;
 }
+
+.catalogue__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.catalogue__filter {
+  min-width: 208px;
+  margin-right: 32px;
+  outline: 1px solid chartreuse;
+}
+
+.catalogue__showcase {
+  outline: 1px solid fuchsia;
+  flex-grow: 1;
+}
