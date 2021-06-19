@@ -24,5 +24,7 @@ a {
 }
 
 .main {
+  box-sizing: border-box;
+  padding: 200px 0px;
   flex-grow: 1;
 }

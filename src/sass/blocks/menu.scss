@@ -3,13 +3,39 @@
   @include list-reset;
 
   &--main,
-  &--user {
+  &--user,
+  &--social {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
   }
+
+  &--social {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  &--about {
+    max-width: 140px;
+  }
+
+  &--contacts {
+    max-width: 130px;
+    line-height: 12.3px;
+  }
 }
+
+.menu__item {
+  position: relative;
+  box-sizing: border-box;
+
+  &--icon {
+    padding-left: 14px;
+  }
+}
+
 
 .menu--main .menu__item {
   margin-right: 40px;
@@ -22,14 +48,50 @@
 }
 
 .menu--user .menu__item {
-  position: relative;
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  font-weight: 400;
 
   &:last-child {
     margin-right: 4px;
+  }
+}
+
+.menu--social .menu__item {
+  width: 24px;
+  height: 24px;
+  margin-right: 23px;
+  opacity: 0.65;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.menu--about .menu__item {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menu--catalogue .menu__item,
+.menu--information .menu__item {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menu__text {
+  @include indents-none;
+
+  &--link {
+    display: block;
+    margin-top: 1px;
+    margin-bottom: 12px;
   }
 }
 

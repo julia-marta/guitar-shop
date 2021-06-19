@@ -35,7 +35,6 @@
     right: -69px;
     width: 894px;
     height: 298px;
-    background-color: $footer-background;
     background-image: url("../../img/image_header.png");
     background-position: bottom right;
     background-repeat: no-repeat;
@@ -50,6 +49,11 @@
 
 .header__logo img {
   display: block;
+}
+
+.header__logo-link {
+  pointer-events: none;
+  cursor: default;
 }
 
 .header__navigation {
