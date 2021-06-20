@@ -70,6 +70,17 @@ export const BREADCRUMBS = [`Главная`, `Каталог`, `Оформля�
 
 export const STARS = [`1`, `2`, `3`, `4`, `5`];
 
+export const CARDS_PER_PAGE = 9;
+
+export const FIRST_PAGE_NUMBER = 1;
+
+export const DEFAULT_CARDS_RANGE = {first: 0, last: CARDS_PER_PAGE};
+
+export const NavigationButton = {
+  PREVIOUS: `Назад`,
+  NEXT: `Далее`
+};
+
 export const GuitarImage = {
   "SO757575": `guitar1`,
   "TK129049": `guitar2`,

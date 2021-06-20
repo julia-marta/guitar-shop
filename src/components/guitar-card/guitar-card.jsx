@@ -34,8 +34,8 @@ const GuitarCard = ({guitar}) => {
         <p className="guitar__text">{`${Number(guitar.price).toLocaleString('ru-RU')} ${String.fromCharCode(0x20BD)}`}</p>
       </div>
       <div className="guitar__wrapper guitar__buttons">
-        <Button title={`Подробнее`} className="guitar__button" type={`mono`} />
-        <Button title={`Купить`} className="guitar__button" type={`color`} icon={IconType.CART} />
+        <Button title={`Подробнее`} className={`guitar__button`} type={`mono`} />
+        <Button title={`Купить`} className={`guitar__button guitar__button--basket`} type={`color`} icon={IconType.CART} />
       </div>
     </li>
   );

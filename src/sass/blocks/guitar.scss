@@ -84,6 +84,12 @@
   grid-row-end: 5;
 }
 
+.guitar__button {
+  &--basket {
+    padding-left: 14px;
+  }
+}
+
 .guitar__text {
   @include indents-none;
   letter-spacing: 0.7px;

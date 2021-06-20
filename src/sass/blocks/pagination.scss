@@ -1,0 +1,33 @@
+.pagination {
+  @include list-reset;
+  @include indents-none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.pagination__item {
+  margin-left: 10px;
+
+  &:first-child,
+  &--nav {
+    margin-left: 14px;
+  }
+}
+
+.pagination__button {
+
+  &--nav {
+    width: 80px;
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $main-background;
+    background-color: $pager-active;
+  }
+
+
+}
