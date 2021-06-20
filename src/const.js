@@ -74,8 +74,6 @@ export const CARDS_PER_PAGE = 9;
 
 export const FIRST_PAGE_NUMBER = 1;
 
-export const DEFAULT_CARDS_RANGE = {first: 0, last: CARDS_PER_PAGE};
-
 export const NavigationButton = {
   PREVIOUS: `Назад`,
   NEXT: `Далее`
