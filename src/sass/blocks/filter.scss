@@ -1,4 +1,111 @@
 .filter__title {
   @include title;
+  margin-bottom: 29px;
   line-height: 21px;
+
+  &--subtitle {
+    margin-bottom: 24px;
+  }
 }
+
+.filter__title span {
+  font-size: 15px;
+}
+
+.filter__item {
+  @include indents-none;
+  box-sizing: border-box;
+  padding-top: 30px;
+  border: none;
+  border-top: 0.7px solid $header-background;
+}
+
+.filter__wrapper {
+  position: relative;
+  margin-bottom: 30px;
+
+  &--price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 14px;
+      height: 1px;
+      margin: auto;
+      background-color: $pager-active;
+    }
+  }
+}
+
+.filter__input {
+  @include indents-none;
+  box-sizing: border-box;
+  display: block;
+  width: 84px;
+  height: 27px;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  border: 0.7px solid $border;
+  border-radius: 2px;
+}
+
+.filter__checkbox-wrapper {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 12px;
+}
+
+.filter__label svg {
+  display: none;
+}
+
+.filter__label {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.filter__checkbox + label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0.7px solid $border;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.filter__checkbox:checked ~ label svg {
+  display: block;
+}
+
+.filter__checkbox:hover ~ label::before,
+.filter__checkbox:focus ~ label::before {
+  border-color: $pager-active;
+}
+
+.filter__checkbox:active ~ label::before {
+  border-color: $button-mono;
+}
+
+.filter__checkbox:disabled ~ label::before {
+  background-color: $input-disabled;
+  border-color: #DDDDDD;
+  cursor: default;
+}
+

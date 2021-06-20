@@ -14,7 +14,7 @@ const Showcase = () => {
   const guitars = useSelector((state) => state.guitarData);
 
   useEffect(() => {
-    const pages = Math.ceil(guitars.length / CARDS_PER_PAGE)
+    const pages = Math.ceil(guitars.length / CARDS_PER_PAGE);
     setTotalPages(pages);
     setCurrentPage(FIRST_PAGE_NUMBER);
     setGuitarsToShow(guitars.slice(0, CARDS_PER_PAGE));
@@ -25,7 +25,6 @@ const Showcase = () => {
       setCurrentPage(newPage);
       const cardsRangeStart = CARDS_PER_PAGE * (newPage - 1);
       const cardsRandeEnd = (cardsRangeStart + CARDS_PER_PAGE) > guitars.length ? guitars.length : cardsRangeStart + CARDS_PER_PAGE;
-      console.log(cardsRangeStart, cardsRandeEnd)
 
       setGuitarsToShow(guitars.slice(cardsRangeStart, cardsRandeEnd));
     }, [guitars]

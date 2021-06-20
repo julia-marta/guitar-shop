@@ -109,6 +109,64 @@ export const PageTitle = {
   CART: `Корзина`,
 };
 
+export const FilterField = {
+  PRICE: {
+    legend: `Цена,`,
+    name: `price`,
+    inputs: [
+      {
+        name: `min`,
+        label: `Минимальная цена`,
+      },
+      {
+        name: `max`,
+        label: `Максимальная цена`,
+      },
+    ],
+  },
+  GUITAR_TYPE: {
+    legend: `Тип гитар`,
+    name: `guitar-type`,
+    checkboxes: [
+      {
+        name: `acoustic`,
+        label: `Акустические гитары`,
+      },
+      {
+        name: `electric`,
+        label: `Электрогитары`,
+      },
+      {
+        name: `ukulele`,
+        label: `Укулеле`,
+      },
+    ]
+  },
+  STRINGS: {
+    legend: `Количество струн`,
+    name: `strings`,
+    checkboxes: [
+      {
+        name: `4`,
+        label: `4`,
+      },
+      {
+        name: `6`,
+        label: `6`,
+      },
+      {
+        name: `7`,
+        label: `7`,
+      },
+      {
+        name: `12`,
+        label: `12`,
+      },
+    ]
+  },
+};
+
+
 export const IconType = {
   ARROW: {
     name: `arrow`,
@@ -124,6 +182,11 @@ export const IconType = {
     name: `cart`,
     width: 12,
     height: 13,
+  },
+  CHECKBOX: {
+    name: `checkbox`,
+    width: 14,
+    height: 14,
   },
   CLOCK: {
     name: `clock`,
