@@ -1,0 +1,24 @@
+.button {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 87px;
+  height: 23px;
+  text-align: center;
+  line-height: 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: $main-background;
+  border-radius: 2px;
+
+  &--mono {
+    width: 89px;
+    background-color: $button-mono;
+  }
+
+  &--color {
+    padding-left: 14px;
+    background-color: $button-color;
+  }
+}

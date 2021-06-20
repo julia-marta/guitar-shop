@@ -68,6 +68,23 @@ export const SORTING_TOGGLE_ITEMS = [
 
 export const BREADCRUMBS = [`Главная`, `Каталог`, `Оформляем`];
 
+export const STARS = [`1`, `2`, `3`, `4`, `5`];
+
+export const GuitarImage = {
+  "SO757575": `guitar1`,
+  "TK129049": `guitar2`,
+  "RO111111": `guitar3`,
+  "TK436457": `guitar4`,
+  "DI192138": `guitar5`,
+  "SO934345": `guitar1`,
+  "DI082347": `guitar3`,
+  "SO135646": `guitar6`,
+  "VO154751": `guitar5`,
+  "укулеле": `guitar3`,
+  "акустическая гитара": `guitar5`,
+  "электрогитара": `guitar1`,
+};
+
 export const AppRoute = {
   ROOT: `/`,
   CART: `/cart`,
@@ -93,6 +110,11 @@ export const IconType = {
     name: `basket`,
     width: 16,
     height: 18,
+  },
+  CART: {
+    name: `cart`,
+    width: 12,
+    height: 13,
   },
   CLOCK: {
     name: `clock`,
@@ -123,6 +145,16 @@ export const IconType = {
     name: `search`,
     width: 40,
     height: 40,
+  },
+  STAR: {
+    name: `star`,
+    width: 12,
+    height: 12,
+  },
+  STAR_EMPTY: {
+    name: `star-empty`,
+    width: 12,
+    height: 12,
   },
   TOGGLE_DOWN: {
     name: `toggle-down`,

@@ -1,0 +1,90 @@
+.guitar {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  align-items: flex-start;
+  width: 220px;
+  height: 304px;
+  padding: 15px 13px 20px;
+  border: 1px solid $header-background;
+}
+
+.guitar__wrapper {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.guitar__image {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-bottom: 9px;
+}
+
+.guitar__picture {
+  display: block;
+  margin: 0 auto;
+}
+
+.guitar__rating {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-bottom: 5px;
+}
+
+.guitar__rating,
+.guitar__star-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.guitar__star-list {
+  @include list-reset;
+  @include indents-none;
+}
+
+.guitar__star {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+
+  &:last-child {
+    margin-right: 3px;
+  }
+}
+
+.guitar__reviews {
+  width: 13px;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: $sub-text;
+}
+
+.guitar__info,
+.guitar__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.guitar__info {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin-bottom: 13px;
+}
+
+.guitar__buttons {
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.guitar__text {
+  @include indents-none;
+  letter-spacing: 0.7px;
+}
