@@ -13,7 +13,7 @@ const Filter = () => {
         <h3 className="filter__title">Фильтр</h3>
         <FilterItem name={PRICE.name} legend={PRICE.legend} symbol={String.fromCharCode(0x20BD)}>
           {PRICE.inputs.map((input, i) => (
-            <Input name={input.name} label={input.label} value={``} />
+            <Input className={`filter__input`} name={input.name} label={input.label} value={``} />
           ))}
         </FilterItem>
         <FilterItem name={GUITAR_TYPE.name} legend={GUITAR_TYPE.legend}>

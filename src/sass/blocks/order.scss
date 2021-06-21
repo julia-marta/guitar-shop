@@ -1,0 +1,67 @@
+.order {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 38px;
+}
+
+.order__promo-title,
+.order__promo-subtitle {
+  @include indents-none;
+}
+
+.order__promo-title {
+  @include title(16px);
+  line-height: 18px;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.order__promo-subtitle {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.9px;
+  margin-bottom: 20px;
+}
+
+.order__promo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.order__promo-input {
+  @include input;
+  width: 170px;
+  height: 36px;
+  margin-right: 33px;
+  border: 2px solid $header-background;
+}
+
+.order__button {
+  height: 36px;
+  font-size: 16px;
+  line-height: 36px;
+  letter-spacing: 1.6px;
+
+  &--promo {
+    width: 200px;
+    padding-left: 7px;
+  }
+
+  &--checkout {
+    width: 220px;
+  }
+}
+
+.order__checkout {
+  text-align: right;
+}
+
+.order__checkout-total {
+  @include title(20px);
+  margin-right: 8px;
+  margin-bottom: 45px;
+}

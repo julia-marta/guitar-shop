@@ -1,0 +1,36 @@
+.purchase {
+  display: grid;
+  min-height: 164px;
+  border-top: 0.7px solid $header-background;
+
+  &--empty {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.purchase__title {
+  @include title(16px);
+  text-transform: uppercase;
+
+}
+
+.purchase--empty .purchase__title {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding-left: 25px;
+}
+
+.purchase--empty .purchase__title svg {
+  width: 25px;
+  height: auto;
+  top: -6px;
+  left: -15px;
+}
+
+.purchase--empty .button {
+    margin: 0 auto;
+}

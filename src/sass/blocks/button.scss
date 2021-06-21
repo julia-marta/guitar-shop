@@ -21,6 +21,26 @@
     background-color: $button-color;
   }
 
+  &--transparent {
+    width: 220px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 44px;
+    letter-spacing: 1.6px;
+    color: $pager-active;
+    border: 1px solid $pager-active;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.5;
+      border-color: #6C6C6C;
+    }
+  }
+
   &--pagination {
     width: 24px;
     height: 24px;

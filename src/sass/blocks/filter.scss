@@ -46,16 +46,10 @@
 }
 
 .filter__input {
-  @include indents-none;
-  box-sizing: border-box;
-  display: block;
+  @include input;
   width: 84px;
   height: 27px;
-  font-family: inherit;
-  outline: none;
-  background-color: transparent;
   border: 0.7px solid $border;
-  border-radius: 2px;
 }
 
 .filter__checkbox-wrapper {
