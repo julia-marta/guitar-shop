@@ -1,0 +1,123 @@
+.pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($pager-active, .6);
+  z-index: 10;
+}
+
+
+.pop-up__window {
+  position: relative;
+  box-sizing: border-box;
+  width: 740px;
+  height: 230px;
+  padding: 30px 50px;
+  background-color: $main-background;
+  box-shadow: 0px 5px 6px rgba(63, 63, 63, 0.2);
+  border-radius: 4px;
+
+  &--success {
+    height: 185px;
+  }
+}
+
+.pop-up__title {
+  @include title;
+  margin-bottom: 25px;
+  color: $pale-text;
+  letter-spacing: 1px;
+}
+
+.pop-up__close {
+  @include indents-none;
+  position: absolute;
+  display: block;
+  top: 19px;
+  right: 19px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 1.5px;
+    height: 15px;
+    margin: auto;
+    background-color: $border;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(135deg);
+  }
+}
+
+.pop-up__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pop-up__item {
+  display: grid;
+  grid-template-columns: 56px 202px;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 41px;
+
+}
+
+.pop-up__item img {
+  height: 128px;
+  width: auto;
+}
+
+.pop-up__button {
+  width: 220px;
+  height: 46px;
+  font-size: 16px;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+}
+
+.pop-up__buttons {
+  display: grid;
+  margin-top: 13px;
+}
+
+.pop-up__window--success .pop-up__buttons {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+  margin: auto;
+  margin-top: 14px;
+}
+
+.pop-up__window--delete .pop-up__buttons {
+  grid-template-columns: 100%;
+  grid-template-rows:  1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+}

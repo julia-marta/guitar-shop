@@ -9,16 +9,18 @@ const Showcase = () => {
 
   const [currentPage, setCurrentPage] = useState(FIRST_PAGE_NUMBER);
   const [totalPages, setTotalPages] = useState(0);
+  const [guitars, setGuitars] = useState([]);
   const [guitarsToShow, setGuitarsToShow] = useState([]);
 
-  const guitars = useSelector((state) => state.guitarData);
+  const guitarsData = useSelector((state) => state.guitarData);
 
   useEffect(() => {
-    const pages = Math.ceil(guitars.length / CARDS_PER_PAGE);
+    const pages = Math.ceil(Object.values(guitarsData).length / CARDS_PER_PAGE);
     setTotalPages(pages);
     setCurrentPage(FIRST_PAGE_NUMBER);
-    setGuitarsToShow(guitars.slice(0, CARDS_PER_PAGE));
-  }, [guitars]);
+    setGuitars(Object.values(guitarsData));
+    setGuitarsToShow(Object.values(guitarsData).slice(0, CARDS_PER_PAGE));
+  }, [guitarsData]);
 
   const handlePaginationClick = useCallback(
     (newPage) => {

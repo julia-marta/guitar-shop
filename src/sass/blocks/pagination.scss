@@ -22,6 +22,10 @@
     width: 80px;
   }
 
+  &--dots {
+    letter-spacing: normal;
+  }
+
   &--active,
   &:hover,
   &:focus {

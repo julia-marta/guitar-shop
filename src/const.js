@@ -80,6 +80,41 @@ export const NavigationButton = {
   DOTS: `...`
 };
 
+export const PopUpType = {
+  ADD: {
+    type: `add`,
+    title: `Добавить товар в корзину`,
+    buttons: [{
+      type: `color`,
+      title: `Добавить в корзину`
+    }]
+  },
+  DELETE: {
+    type: `delete`,
+    title: `Удалить этот товар?`,
+    buttons: [{
+      type: `color`,
+      title: `Удалить товар`
+    },
+    {
+      type: `transparent`,
+      title: `Продолжить покупки`
+    }]
+  },
+  SUCCESS: {
+    type: `success`,
+    title: `Товар успешно добавлен в корзину`,
+    buttons: [{
+      type: `color`,
+      title: `Перейти в корзину`
+    },
+    {
+      type: `transparent`,
+      title: `Продолжить покупки`
+    }]
+  },
+}
+
 export const GuitarImage = {
   "SO757575": `guitar1`,
   "TK129049": `guitar2`,
@@ -98,6 +133,11 @@ export const GuitarImage = {
 export const AppRoute = {
   ROOT: `/`,
   CART: `/cart`,
+};
+
+export const Key = {
+  ESC: `Esc`,
+  ESCAPE: `Escape`
 };
 
 export const PageType = {

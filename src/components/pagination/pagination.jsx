@@ -41,7 +41,7 @@ const Pagination = ({currentPage, totalPages, onButtonClick}) => {
           page ? <li key={i + 1} className={`pagination__item ${page === PREVIOUS || page === NEXT ? `pagination__item--nav` : ``}`}>
             <Button title={page.toString()} className={`pagination__button ${page === currentPage ? `pagination__button--active` : page === PREVIOUS || page === NEXT ? `pagination__button--nav` : page === DOTS ? `pagination__button--dots` : ``}`} 
               type={`pagination`} onClick={handleButtonClick} />
-         </li> : <></>
+         </li> : ``
         ))}
       </ul>
   );
