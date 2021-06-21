@@ -76,7 +76,8 @@ export const FIRST_PAGE_NUMBER = 1;
 
 export const NavigationButton = {
   PREVIOUS: `Назад`,
-  NEXT: `Далее`
+  NEXT: `Далее`,
+  DOTS: `...`
 };
 
 export const GuitarImage = {
