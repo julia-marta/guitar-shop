@@ -6,8 +6,8 @@ const Catalogue = () => {
 
   return (
       <div className="catalogue__content">
-        <Filter/>
-        <Showcase/>
+        <Filter />
+        <Showcase />
       </div>
   );
 };

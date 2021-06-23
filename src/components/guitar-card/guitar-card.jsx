@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import {useDispatch} from 'react-redux';
+import {openPopUp} from '../../store/slice';
 import Icon from '../icon/icon';
 import Button from '../button/button';
-import {STARS, IconType} from '../../const';
-
-const getStarsCount = (reviewsCount) => {
-  return Math.round((reviewsCount / 10) * 1.7);
-}
+import {parseStringToLocaleString, getStarsCount} from '../../utils';
+import {IconType, PopUpType, ButtonType, STARS, RUB_SYMBOL} from '../../const';
 
 const GuitarCard = ({guitar}) => {
 
+  const dispatch = useDispatch();
+
   const rating = getStarsCount(guitar.rating);
+
+  const handleBasketButtonClick = useCallback(
+    (evt) => {
+      evt.preventDefault();
+      dispatch(openPopUp({name: PopUpType.ADD.type.toUpperCase(), product: guitar.id}))
+    }, [dispatch, guitar]
+  );
 
   return (
     <li className="catalogue__item guitar">
@@ -21,7 +29,7 @@ const GuitarCard = ({guitar}) => {
       </div>
       <div className="guitar__wrapper guitar__rating">
         <ul className="guitar__star-list">
-          {STARS.map((star, i) => (
+          {STARS.map((_star, i) => (
             <li key={i + 1} className="guitar__star">
               {i < rating ? <Icon icon={IconType.STAR} /> : <Icon icon={IconType.STAR_EMPTY} /> }
             </li>
@@ -31,11 +39,12 @@ const GuitarCard = ({guitar}) => {
       </div>
       <div className="guitar__wrapper guitar__info">
         <p className="guitar__text">{guitar.title}</p>
-        <p className="guitar__text">{`${Number(guitar.price).toLocaleString('ru-RU')} ${String.fromCharCode(0x20BD)}`}</p>
+        <p className="guitar__text">{`${parseStringToLocaleString(guitar.price)} ${RUB_SYMBOL}`}</p>
       </div>
       <div className="guitar__wrapper guitar__buttons">
-        <Button title={`Подробнее`} className={`guitar__button`} type={`mono`} />
-        <Button title={`Купить`} className={`guitar__button guitar__button--basket`} type={`color`} icon={IconType.CART} />
+        <Button title={ButtonType.MORE.title} className={`guitar__button`} type={ButtonType.MORE.type} />
+        <Button title={ButtonType.BUY.title} className={`guitar__button guitar__button--basket`} type={ButtonType.BUY.type}
+        icon={IconType.CART} onClick={handleBasketButtonClick} />
       </div>
     </li>
   );

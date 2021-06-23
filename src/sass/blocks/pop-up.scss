@@ -45,6 +45,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  transition: transform 0.5s;
 
   &::before,
   &::after {
@@ -67,6 +68,11 @@
   &::after {
     transform: rotate(135deg);
   }
+
+  &:hover,
+  &:focus {
+    transform: rotate(90deg);
+  }
 }
 
 .pop-up__content {
@@ -77,14 +83,38 @@
 }
 
 .pop-up__item {
-  display: grid;
-  grid-template-columns: 56px 202px;
-  grid-template-rows: auto;
-  justify-content: center;
-  align-items: center;
-  gap: 41px;
-
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+//   display: grid;
+//   grid-template-columns: 56px 1fr;
+//   grid-template-rows: auto;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 41px;
 }
+
+.pop-up__item .purchase__image {
+  width: 56px;
+  margin-right: 41px;
+}
+
+.pop-up__item .purchase__info {
+  margin-right: 0;
+}
+
+.pop-up__item .purchase__title {
+  margin-top: 0;
+}
+
+.pop-up__item .purchase__text {
+  margin-left: 0;
+}
+
+.pop-up__item .purchase__sum {
+  margin-top: 14px;
+}
+
 
 .pop-up__item img {
   height: 128px;

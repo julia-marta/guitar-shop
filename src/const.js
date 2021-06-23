@@ -80,40 +80,68 @@ export const NavigationButton = {
   DOTS: `...`
 };
 
+export const ControlButton = {
+  DECREASE: `decrease`,
+  INCREASE: `increase`,
+};
+
+export const LogoType = {
+  HEADER: `header`,
+  FOOTER: `footer`
+};
+
+export const ButtonType = {
+  MORE: {
+    type: `mono`,
+    title: `Подробнее`
+  },
+  BUY: {
+    type: `color`,
+    title: `Купить`
+  },
+  ADD: {
+    type: `color`,
+    title: `Добавить в корзину`
+  },
+  DELETE: {
+    type: `color`,
+    title: `Удалить товар`
+  },
+  CONTINUE: {
+    type: `transparent`,
+    title: `Продолжить покупки`
+  },
+  GO_TO_BASKET: {
+    type: `color`,
+    title: `Перейти в корзину`
+  },
+  PROMO: {
+    type: `mono`,
+    title: `Применить купон`
+  },
+  CHECKOUT: {
+    type: `color`,
+    title: `Оформить заказ`
+  },
+};
+
 export const PopUpType = {
   ADD: {
     type: `add`,
     title: `Добавить товар в корзину`,
-    buttons: [{
-      type: `color`,
-      title: `Добавить в корзину`
-    }]
+    buttons: [ButtonType.ADD]
   },
   DELETE: {
     type: `delete`,
     title: `Удалить этот товар?`,
-    buttons: [{
-      type: `color`,
-      title: `Удалить товар`
-    },
-    {
-      type: `transparent`,
-      title: `Продолжить покупки`
-    }]
+    buttons: [ButtonType.DELETE, ButtonType.CONTINUE]
   },
   SUCCESS: {
     type: `success`,
     title: `Товар успешно добавлен в корзину`,
-    buttons: [{
-      type: `color`,
-      title: `Перейти в корзину`
-    },
-    {
-      type: `transparent`,
-      title: `Продолжить покупки`
-    }]
+    buttons: [ButtonType.GO_TO_BASKET, ButtonType.CONTINUE]
   },
-}
+};
 
 export const GuitarImage = {
   "SO757575": `guitar1`,
@@ -285,3 +313,5 @@ export const IconType = {
     height: 24,
   }
 };
+
+export const RUB_SYMBOL = String.fromCharCode(0x20BD);

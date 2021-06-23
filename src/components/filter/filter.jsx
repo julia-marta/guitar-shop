@@ -2,7 +2,7 @@ import React from 'react';
 import FilterItem from '../filter-item/filter-item';
 import Input from '../input/input';
 import Checkbox from '../checkbox/checkbox';
-import {FilterField} from '../../const';
+import {FilterField, RUB_SYMBOL} from '../../const';
 
 const {PRICE, GUITAR_TYPE, STRINGS} = FilterField;
 
@@ -11,7 +11,7 @@ const Filter = () => {
   return (
       <form action="#" className="catalogue__filter filter">
         <h3 className="filter__title">Фильтр</h3>
-        <FilterItem name={PRICE.name} legend={PRICE.legend} symbol={String.fromCharCode(0x20BD)}>
+        <FilterItem name={PRICE.name} legend={PRICE.legend} symbol={RUB_SYMBOL}>
           {PRICE.inputs.map((input, i) => (
             <Input key={i + 1} className={`filter__input`} name={input.name} label={input.label} value={``} />
           ))}

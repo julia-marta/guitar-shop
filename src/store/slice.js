@@ -14,15 +14,35 @@ export const getData = createAsyncThunk('guitar-shop/getData',  async () => {
 
 const initialState = {
   guitarData: {},
-  cartData: {}
+  cartData: {},
+  popUp: null,
+  index: 0,
 };
 
 const guitarShopSlice = createSlice({
   name: 'guitar-shop',
   initialState,
   reducers: {
+    openPopUp(state, action) {
+      state.popUp = action.payload;
+    },
+    closePopUp(state, _action) {
+      state.popUp = null;
+    },
     addToCart(state, action) {
-      state.cartData[action.payload] = state.guitarData[action.payload];
+      if (!state.cartData[action.payload]) {
+        state.cartData[action.payload] = {...state.guitarData[action.payload], count: 1};
+        state.index += 1;
+      } else {
+        state.cartData[action.payload] = {...state.cartData[action.payload], count: state.cartData[action.payload].count + 1};
+      }
+    },
+    changeCount(state, action) {
+      state.cartData[action.payload.id] = {...state.cartData[action.payload.id], count: action.payload.count};
+    },
+    deleteFromCart(state, action) {
+      delete state.cartData[action.payload];
+      state.index -= 1;
     },
   },
   extraReducers: {
@@ -37,5 +57,7 @@ const guitarShopSlice = createSlice({
 });
 
 const Reducer = guitarShopSlice.reducer;
+
+export const {openPopUp, closePopUp, addToCart, changeCount, deleteFromCart} = guitarShopSlice.actions;
 
 export default Reducer;

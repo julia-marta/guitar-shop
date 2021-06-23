@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import Icon from '../icon/icon';
 
-const Button = ({title, className, type, icon, onClick}) => {
+const Button = ({title, className, type, icon, path, onClick}) => {
 
     return (
+      path ?
+      <Link to={path} className={`${className} button ${type ? `button--${type}` : ``}`} >
+        {icon && <Icon icon={icon} />}
+        {title}
+      </Link> :
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
       <a href="#" className={`${className} button ${type ? `button--${type}` : ``}`} onClick={onClick}>
         {icon && <Icon icon={icon} />}
@@ -22,6 +28,8 @@ Button.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
   }),
+  path: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;
