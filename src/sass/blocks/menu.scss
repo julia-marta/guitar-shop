@@ -5,17 +5,11 @@
   &--main,
   &--user,
   &--social,
-  &--sorting,
-  &--toggle {
+  &--sorting {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-  }
-
-  &--toggle {
-    margin-left: auto;
-    margin-top: -1px;
   }
 
   &--social {
@@ -43,7 +37,6 @@
   }
 }
 
-
 .menu--main .menu__item {
   margin-right: 40px;
   line-height: 20px;
@@ -69,16 +62,6 @@
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 1.3px;
-}
-
-.menu--toggle .menu__item {
-  width: 22px;
-  height: 22px;
-  margin-right: 14px;
-
-  &:last-child {
-    margin-right: 8px;
-  }
 }
 
 .menu--social .menu__item {
@@ -108,6 +91,17 @@
     margin-bottom: 0;
   }
 }
+
+.menu--sorting .menu__link {
+  color: $pager-active;
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $main-text;
+  }
+}
+
 
 .menu__link {
   box-sizing: border-box;

@@ -83,15 +83,10 @@
 }
 
 .pop-up__item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-//   display: grid;
-//   grid-template-columns: 56px 1fr;
-//   grid-template-rows: auto;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 41px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .pop-up__item .purchase__image {

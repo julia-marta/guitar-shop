@@ -53,19 +53,6 @@ export const FOOTER_MENU_ITEMS = [
   },
 ];
 
-export const SORTING_ITEMS = [`по цене`, `по популярности`];
-
-export const SORTING_TOGGLE_ITEMS = [
-    {
-      type: `toggle_up`,
-      label: `По возрастанию`,
-    },
-    {
-      type: `toggle_down`,
-      label: `По убыванию`,
-    },
-  ];
-
 export const BREADCRUMBS = [`Главная`, `Каталог`, `Оформляем`];
 
 export const STARS = [`1`, `2`, `3`, `4`, `5`];
@@ -73,6 +60,8 @@ export const STARS = [`1`, `2`, `3`, `4`, `5`];
 export const CARDS_PER_PAGE = 9;
 
 export const FIRST_PAGE_NUMBER = 1;
+
+
 
 export const NavigationButton = {
   PREVIOUS: `Назад`,
@@ -141,6 +130,30 @@ export const PopUpType = {
     title: `Товар успешно добавлен в корзину`,
     buttons: [ButtonType.GO_TO_BASKET, ButtonType.CONTINUE]
   },
+};
+
+export const SortingType = {
+  PRICE: {
+    title: `по цене`,
+    type: `price`
+  } ,
+  RATING: {
+    title: `по популярности`,
+    type: `rating`
+  }
+};
+
+export const SortingOrder = {
+  ASCENDING: {
+    title: `По возрастанию`,
+    type: `ascending`,
+    icon: `toggle_up`
+  } ,
+  DESCENDING: {
+    title: `По убыванию`,
+    type: `descending`,
+    icon: `toggle_down`,
+  }
 };
 
 export const GuitarImage = {

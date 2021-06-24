@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 49px;
+  margin-top: 48px;
 }
 
 .catalogue__filter {
@@ -23,16 +23,15 @@
 
 .catalogue__showcase {
   box-sizing: border-box;
-  padding-top: 1px;
   max-width: 700px;
 }
 
 .catalogue__sorting {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  margin-bottom: 29px;
+  margin-bottom: 27px;
 }
 
 .catalogue__sorting-title {
@@ -41,6 +40,39 @@
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 1.3px;
+}
+
+.catalogue__sorting-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.catalogue__sorting-toggle {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-right: 11px;
+  color: $toggle;
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $main-text;
+  }
 }
 
 .catalogue__list {

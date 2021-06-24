@@ -26,24 +26,6 @@ const Page = ({type}) => {
     }
   });
 
-  // const handlePopUpOpening = useCallback(
-  //   (name, product) => {
-  //     if (product) {
-  //       setActiveProduct(product);
-  //     }
-  //     setActivePopUp(name.toUpperCase());
-  //   }, []
-  // );
-
-  // const handlePopUpClosing = useCallback(
-  //   () => {
-  //     if (activeProduct) {
-  //       setActiveProduct(null);
-  //     }
-  //     setActivePopUp(null);
-  //   }, [activeProduct]
-  // );
-
   const handleEscKeyDown = useCallback(
     (evt) => {
       if (evt.key === Key.ESCAPE || evt.key === Key.ESC) {
