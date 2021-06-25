@@ -4,7 +4,7 @@
   line-height: 21px;
 
   &--subtitle {
-    margin-bottom: 24px;
+    margin-bottom: 23.5px;
   }
 }
 
@@ -22,7 +22,7 @@
 
 .filter__wrapper {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 29.5px;
 
   &--price {
     display: flex;
@@ -33,7 +33,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: -2px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -48,7 +48,8 @@
 .filter__input {
   @include input;
   width: 84px;
-  height: 27px;
+  height: 28px;
+  letter-spacing: 1px;
   border: 0.7px solid $border;
 }
 

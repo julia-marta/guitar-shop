@@ -11,9 +11,9 @@ const Pagination = ({currentPage, totalPages, onButtonClick}) => {
     previous: currentPage > FIRST_PAGE_NUMBER ? PREVIOUS : false,
     first: FIRST_PAGE_NUMBER,
     prevDots: currentPage > FIRST_PAGE_NUMBER + 1 && totalPages > PAGER_SIZE ? DOTS : false,
-    currentPage: currentPage === FIRST_PAGE_NUMBER ? currentPage + 1 : currentPage === totalPages ? currentPage - 1 : currentPage,
+    currentPage: currentPage === FIRST_PAGE_NUMBER && totalPages >= PAGER_SIZE ? currentPage + 1 : currentPage === totalPages && totalPages >= PAGER_SIZE ? currentPage - 1 : totalPages >= PAGER_SIZE ? currentPage : false,
     nextDots: currentPage < totalPages - 1 && totalPages > PAGER_SIZE ? DOTS : false,
-    last: totalPages,
+    last: totalPages > FIRST_PAGE_NUMBER ? totalPages : false,
     next: currentPage < totalPages ? NEXT : false,
   };
 
@@ -36,6 +36,7 @@ const Pagination = ({currentPage, totalPages, onButtonClick}) => {
   );
 
   return (
+      totalPages > 0 && 
       <ul className="catalogue__pagination pagination">
         {Object.values(pages).map((page, i) => (
           page ? <li key={i + 1} className={`pagination__item ${page === PREVIOUS || page === NEXT ? `pagination__item--nav` : ``}`}>

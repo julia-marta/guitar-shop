@@ -17,6 +17,8 @@ const initialState = {
   catalogueData: {},
   cartData: {},
   sorting: {},
+  filter: {
+    price: {min: ``, max: ``}},
   popUp: null,
   index: 0,
 };
@@ -36,6 +38,9 @@ const guitarShopSlice = createSlice({
     },
     setSorting(state, action) {
       state.sorting = action.payload;
+    },
+    setFilter(state, action) {
+      state.filter = action.payload;
     },
     addToCart(state, action) {
       if (!state.cartData[action.payload]) {
@@ -67,6 +72,6 @@ const guitarShopSlice = createSlice({
 
 const Reducer = guitarShopSlice.reducer;
 
-export const {setCatalogueData, openPopUp, closePopUp, setSorting, addToCart, changeCount, deleteFromCart} = guitarShopSlice.actions;
+export const {setCatalogueData, openPopUp, closePopUp, setSorting, setFilter, addToCart, changeCount, deleteFromCart} = guitarShopSlice.actions;
 
 export default Reducer;

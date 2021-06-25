@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {setSorting} from '../../store/slice';
 import Menu from '../menu/menu';
 import Icon from '../icon/icon';
+import {parseDataToArrayOfValues} from '../../utils';
 import {SortingType, SortingOrder, IconType} from '../../const';
 
 const Sorting = () => {
@@ -10,9 +11,7 @@ const Sorting = () => {
   const dispatch = useDispatch();
   const sorting = useSelector((state) => state.sorting);
 
-  const SORTING_ITEMS = Object.values(SortingType).reduce((acc, item) => {
-    return [...acc, item.title];
-  }, []);
+  const SORTING_ITEMS = parseDataToArrayOfValues(SortingType, `title`);
 
   const SORTING_TOGGLE_ITEMS = Object.values(SortingOrder);
 
