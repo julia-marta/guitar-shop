@@ -61,3 +61,8 @@ export const filterByType = (data, types) => {
 
   return data.filter(item => (types.includes(item.type)));
 }
+
+export const filterByStrings = (data, strings) => {
+
+  return data.filter(item => (strings.includes(item.strings)));
+}

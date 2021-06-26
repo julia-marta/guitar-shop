@@ -1,7 +1,7 @@
 import {createSlice,  createAsyncThunk} from '@reduxjs/toolkit';
 import axios from "axios";
 
-const BASE_URL = `https://sheetdb.io/api/v1/gzbb5ctzqa6f3`;
+const BASE_URL = `https://sheet.best/api/sheets/8abd9b09-fc15-4b7a-83bd-c3f59a75e7f5`;
 
 export const getData = createAsyncThunk('guitar-shop/getData',  async () => {
   try {
@@ -20,7 +20,9 @@ const initialState = {
   filter: {
     price: {min: ``, max: ``},
     type: {electric: false, acoustic: false, ukulele: false},
+    strings: {4: false, 6: false, 7: false, 12: false}
   },
+  availableStrings: [4, 6, 7, 12],
   popUp: null,
   index: 0,
 };
@@ -43,6 +45,9 @@ const guitarShopSlice = createSlice({
     },
     setFilter(state, action) {
       state.filter = action.payload;
+    },
+    setAvailableStrings(state, action) {
+      state.availableStrings = action.payload;
     },
     addToCart(state, action) {
       if (!state.cartData[action.payload]) {
@@ -74,6 +79,6 @@ const guitarShopSlice = createSlice({
 
 const Reducer = guitarShopSlice.reducer;
 
-export const {setCatalogueData, openPopUp, closePopUp, setSorting, setFilter, addToCart, changeCount, deleteFromCart} = guitarShopSlice.actions;
+export const {setCatalogueData, openPopUp, closePopUp, setSorting, setFilter, setAvailableStrings, addToCart, changeCount, deleteFromCart} = guitarShopSlice.actions;
 
 export default Reducer;

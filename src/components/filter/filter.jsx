@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {setCatalogueData} from '../../store/slice';
+import {setCatalogueData, setAvailableStrings} from '../../store/slice';
 import FilterItem from '../filter-item/filter-item';
 import FilterPrice from '../filter-price/filter-price';
 import FilterType from '../filter-type/filter-type';
-import Checkbox from '../checkbox/checkbox';
-import {parseDataToArrayOfValues, normalizeData, filterByPrice, filterByType} from '../../utils';
-import {FilterField, GuitarType, RUB_SYMBOL} from '../../const';
+import FilterStrings from '../filter-strings/filter-strings';
+import {parseDataToArrayOfValues, normalizeData, filterByPrice, filterByType, filterByStrings} from '../../utils';
+import {FilterField, GuitarType, ALL_STRINGS, RUB_SYMBOL} from '../../const';
 
 const {PRICE, GUITAR_TYPE, STRINGS} = FilterField;
 
@@ -31,7 +31,8 @@ const Filter = () => {
 
     const isFilterByPrice = filter.price.min && filter.price.max;
     const isFilterByType = Object.values(filter.type).some((item) => item === true);
-
+    const isFilterByStrings = Object.values(filter.strings).some((item) => item === true);
+    dispatch(setAvailableStrings(ALL_STRINGS));
 
     let filtered = filterData;
 
@@ -40,8 +41,15 @@ const Filter = () => {
     }
 
     if (isFilterByType) {
-      const checkedTypes = Object.entries(filter.type).reduce((acc, [type, value]) => value === true ? [...acc, GuitarType[type].name] : acc, [])
+      const checkedTypes = Object.entries(filter.type).reduce((acc, [type, value]) => value === true ? [...acc, GuitarType[type].name] : acc, []);
+      const availableStrings = [...new Set(Object.entries(filter.type).reduce((acc, [type, value]) => value === true ? [...acc, GuitarType[type].strings] : acc, []).flat())];
+      dispatch(setAvailableStrings(availableStrings))
       filtered = filterByType(filtered, checkedTypes);
+    }
+
+    if (isFilterByStrings) {
+      const checkedStrings = Object.entries(filter.strings).reduce((acc, [strings, value]) => value === true ? [...acc, strings] : acc, []);
+      filtered = filterByStrings(filtered, checkedStrings);
     }
 
     const normalizedData = normalizeData(filtered);
@@ -60,9 +68,7 @@ const Filter = () => {
           <FilterType checkboxes={GUITAR_TYPE.checkboxes} />
         </FilterItem>
         <FilterItem name={STRINGS.name} legend={STRINGS.legend}>
-          {STRINGS.checkboxes.map((checkbox, i) => (
-            <Checkbox key={i + 1} name={checkbox.name} label={checkbox.label} value={true} />
-          ))}
+          <FilterStrings checkboxes={STRINGS.checkboxes} />
         </FilterItem>
       </form>
   );

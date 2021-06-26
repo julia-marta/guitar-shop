@@ -61,7 +61,7 @@ export const CARDS_PER_PAGE = 9;
 
 export const FIRST_PAGE_NUMBER = 1;
 
-
+export const ALL_STRINGS = [4, 6, 7, 12];
 
 export const NavigationButton = {
   PREVIOUS: `Назад`,
@@ -229,19 +229,19 @@ export const FilterField = {
     name: `strings`,
     checkboxes: [
       {
-        name: `4`,
+        name: 4,
         label: `4`,
       },
       {
-        name: `6`,
+        name: 6,
         label: `6`,
       },
       {
-        name: `7`,
+        name: 7,
         label: `7`,
       },
       {
-        name: `12`,
+        name: 12,
         label: `12`,
       },
     ]
@@ -251,11 +251,11 @@ export const FilterField = {
 export const GuitarType = {
   electric: {
     name: `электрогитара`,
-    strings: [6, 7, 12]
+    strings: [4, 6, 7]
   },
   acoustic: {
     name: `акустическая гитара`,
-    strings: [4, 6, 7]
+    strings: [6, 7, 12]
   },
   ukulele: {
     name: `укулеле`,
