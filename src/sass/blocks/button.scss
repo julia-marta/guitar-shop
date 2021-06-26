@@ -15,10 +15,28 @@
   &--mono {
     width: 89px;
     background-color: $button-mono;
+
+    &:hover,
+    &:focus {
+      background-color: $pager-active;
+    }
+
+    &:active {
+      background-color: $border;
+    }
   }
 
   &--color {
     background-color: $button-color;
+
+    &:hover,
+    &:focus {
+      background-color: $button-color-hover;
+    }
+
+    &:active {
+      background-color: $button-color-active;
+    }
   }
 
   &--transparent {

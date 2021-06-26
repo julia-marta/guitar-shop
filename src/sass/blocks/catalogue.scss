@@ -80,8 +80,13 @@
 
   &--active,
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     color: $main-text;
+  }
+
+  &:active {
+    opacity: 0.5;;
   }
 }
 

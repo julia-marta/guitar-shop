@@ -21,9 +21,7 @@ const Menu = ({type, items, activeItem, isText, isIconsOnly, onItemClick}) => {
 
 Menu.propTypes = {
   type: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape])).isRequired,
+  items: PropTypes.array.isRequired,
   activeItem: PropTypes.string,
   isText: PropTypes.bool,
   isIconsOnly: PropTypes.bool,

@@ -92,21 +92,40 @@
   }
 }
 
+.menu__link {
+  box-sizing: border-box;
+  padding: 5px 0;
+}
+
 .menu--sorting .menu__link {
   color: $pager-active;
 
   &--active,
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     color: $main-text;
+  }
+
+  &:active {
+    opacity: 0.5;;
   }
 }
 
+.menu--main .menu__link,
+.menu--user .menu__link svg  {
 
-.menu__link {
-  box-sizing: border-box;
-  padding: 5px 0;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $pale-text;
+  }
+
+  &:active {
+    opacity: 0.5;;
+  }
 }
+
 
 .menu__text {
   @include indents-none;

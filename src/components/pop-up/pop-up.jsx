@@ -72,7 +72,7 @@ PopUp.propTypes = {
   type: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   productId: PropTypes.string,
-  buttons: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  buttons: PropTypes.array.isRequired,
 };
 
 export default PopUp;

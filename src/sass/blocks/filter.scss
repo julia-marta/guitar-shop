@@ -104,3 +104,6 @@
   cursor: default;
 }
 
+.filter__checkbox:disabled + label {
+  cursor: default;
+}
