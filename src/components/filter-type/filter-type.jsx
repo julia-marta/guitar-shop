@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 import {setFilter} from '../../store/slice';
 import Checkbox from '../checkbox/checkbox';
@@ -23,6 +24,13 @@ const FilterType = ({checkboxes}) => {
         ))}
       </>
   );
+};
+
+FilterType.propTypes = {
+  checkboxes: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default FilterType;

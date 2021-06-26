@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MenuItem from '../menu-item/menu-item';
 import MenuIconItem from '../menu-icon-item/menu-icon-item';
 import MenuTextItem from '../menu-text-item/menu-text-item';
@@ -16,6 +17,17 @@ const Menu = ({type, items, activeItem, isText, isIconsOnly, onItemClick}) => {
       ))}
     </ul>
   );
+};
+
+Menu.propTypes = {
+  type: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape])).isRequired,
+  activeItem: PropTypes.string,
+  isText: PropTypes.bool,
+  isIconsOnly: PropTypes.bool,
+  onItemClick: PropTypes.func,
 };
 
 export default Menu;

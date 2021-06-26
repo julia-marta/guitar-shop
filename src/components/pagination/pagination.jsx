@@ -1,9 +1,9 @@
 import React, {useCallback} from 'react';
+import PropTypes from 'prop-types';
 import Button from '../button/button';
-import {FIRST_PAGE_NUMBER, NavigationButton} from '../../const';
+import {FIRST_PAGE_NUMBER, PAGER_SIZE, NavigationButton} from '../../const';
 
 const {PREVIOUS, NEXT, DOTS} = NavigationButton;
-const PAGER_SIZE = 3;
 
 const Pagination = ({currentPage, totalPages, onButtonClick}) => {
 
@@ -46,6 +46,12 @@ const Pagination = ({currentPage, totalPages, onButtonClick}) => {
         ))}
       </ul>
   );
+};
+
+Pagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default Pagination;

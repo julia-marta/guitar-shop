@@ -7,7 +7,6 @@ import PurchaseProduct from '../purchase-product/purchase-product';
 import Button from '../button/button';
 import {PopUpType, ButtonType, AppRoute} from '../../const';
 
-
 const PopUp = ({type, title, productId, buttons}) => {
 
   const product = useSelector((state) => state.guitarData[productId]) || null;
@@ -69,8 +68,11 @@ const PopUp = ({type, title, productId, buttons}) => {
   );
 };
 
-// PopUp.propTypes = {
-
-// };
+PopUp.propTypes = {
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  productId: PropTypes.string,
+  buttons: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+};
 
 export default PopUp;

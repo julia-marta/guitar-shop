@@ -57,7 +57,6 @@ const Filter = () => {
 
   }, [dispatch, filter, filterData]);
 
-
   return (
       <form action="#" className="catalogue__filter filter">
         <h3 className="filter__title">Фильтр</h3>

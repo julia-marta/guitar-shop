@@ -25,6 +25,7 @@ const Main = ({type, children, isMain}) => {
 Main.propTypes = {
  type: PropTypes.string.isRequired,
  children: PropTypes.element.isRequired,
+ isMain: PropTypes.bool,
 };
 
 export default Main;

@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 import {openPopUp} from '../../store/slice';
 import Icon from '../icon/icon';
@@ -48,6 +49,19 @@ const GuitarCard = ({guitar}) => {
       </div>
     </li>
   );
+};
+
+GuitarCard.propTypes = {
+  guitar: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    strings: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }),
 };
 
 export default GuitarCard;

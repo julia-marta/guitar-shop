@@ -61,6 +61,8 @@ export const CARDS_PER_PAGE = 9;
 
 export const FIRST_PAGE_NUMBER = 1;
 
+export const PAGER_SIZE = 3;
+
 export const ALL_STRINGS = [4, 6, 7, 12];
 
 export const PROMOCODES = [`GITARAHIT`, `SUPERGITARA`, `GITARA2020`];
@@ -172,6 +174,11 @@ export const GuitarImage = {
   "акустическая гитара": `guitar5`,
   "электрогитара": `guitar1`,
 };
+
+export const BadCode = {
+  INVALID: `invalid`,
+  ALREADY_APPLIED: `applied`
+}
 
 export const AppRoute = {
   ROOT: `/`,

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {parseStringToLocaleString, capitalizeFirstLetter} from '../../utils';
 import {RUB_SYMBOL} from '../../const';
 
@@ -20,6 +21,20 @@ const PurchaseProduct = ({guitar, isPopUp}) => {
       </div>
     </>
   );
+};
+
+PurchaseProduct.propTypes = {
+  guitar: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    strings: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }),
+  isPopUp: PropTypes.bool,
 };
 
 export default PurchaseProduct;

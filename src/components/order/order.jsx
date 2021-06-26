@@ -4,12 +4,7 @@ import {setPromoCode} from '../../store/slice';
 import Input from '../input/input';
 import Button from '../button/button';
 import {parseStringToLocaleString} from '../../utils';
-import {RUB_SYMBOL, PROMOCODES, ButtonType} from '../../const';
-
-const BadCode = {
-  INVALID: `invalid`,
-  ALREADY_APPLIED: `applied`
-}
+import {RUB_SYMBOL, PROMOCODES, ButtonType, BadCode} from '../../const';
 
 const Order = () => {
 
@@ -19,7 +14,6 @@ const Order = () => {
 
   const [promoValue, setPromoValue] = useState(``);
   const [badCode, setBadCode] = useState(false);
-
 
   const handleInputChange = useCallback(
     (evt) => {
@@ -33,7 +27,7 @@ const Order = () => {
     (evt) => {
         evt.preventDefault();
 
-        if (!PROMOCODES.includes(promoValue)) {
+        if (!PROMOCODES.includes(promoValue.toUpperCase())) {
           setBadCode(BadCode.INVALID);
           return;
         }
@@ -43,7 +37,7 @@ const Order = () => {
           return;
         }
 
-      dispatch(setPromoCode(promoValue));
+      dispatch(setPromoCode(promoValue.toUpperCase()));
 
 
     }, [dispatch, promoCode, promoValue]

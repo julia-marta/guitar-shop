@@ -1,9 +1,9 @@
 import React, {useCallback} from 'react';
+import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 import {setFilter} from '../../store/slice';
 import Input from '../input/input';
 import {parseStringToLocaleString, formatString, isNumbersOnly} from '../../utils';
-
 
 const FilterPrice = ({inputs, minCataloguePrice, maxCataloguePrice}) => {
 
@@ -68,6 +68,15 @@ const FilterPrice = ({inputs, minCataloguePrice, maxCataloguePrice}) => {
         ))}
       </>
   );
+};
+
+FilterPrice.propTypes = {
+  inputs: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })).isRequired,
+  minCataloguePrice: PropTypes.number.isRequired,
+  maxCataloguePrice: PropTypes.number.isRequired,
 };
 
 export default FilterPrice;
