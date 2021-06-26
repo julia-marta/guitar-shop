@@ -248,6 +248,20 @@ export const FilterField = {
   },
 };
 
+export const GuitarType = {
+  electric: {
+    name: `электрогитара`,
+    strings: [6, 7, 12]
+  },
+  acoustic: {
+    name: `акустическая гитара`,
+    strings: [4, 6, 7]
+  },
+  ukulele: {
+    name: `укулеле`,
+    strings: [4]
+  },
+};
 
 export const IconType = {
   ARROW: {

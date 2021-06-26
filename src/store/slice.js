@@ -18,7 +18,9 @@ const initialState = {
   cartData: {},
   sorting: {},
   filter: {
-    price: {min: ``, max: ``}},
+    price: {min: ``, max: ``},
+    type: {electric: false, acoustic: false, ukulele: false},
+  },
   popUp: null,
   index: 0,
 };

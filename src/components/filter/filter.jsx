@@ -3,9 +3,10 @@ import {useSelector, useDispatch} from 'react-redux';
 import {setCatalogueData} from '../../store/slice';
 import FilterItem from '../filter-item/filter-item';
 import FilterPrice from '../filter-price/filter-price';
+import FilterType from '../filter-type/filter-type';
 import Checkbox from '../checkbox/checkbox';
-import {parseDataToArrayOfValues, normalizeData, filterByPrice} from '../../utils';
-import {FilterField, RUB_SYMBOL} from '../../const';
+import {parseDataToArrayOfValues, normalizeData, filterByPrice, filterByType} from '../../utils';
+import {FilterField, GuitarType, RUB_SYMBOL} from '../../const';
 
 const {PRICE, GUITAR_TYPE, STRINGS} = FilterField;
 
@@ -28,12 +29,23 @@ const Filter = () => {
 
   useEffect(() => {
 
-    if (filter.price.min && filter.price.max) {
+    const isFilterByPrice = filter.price.min && filter.price.max;
+    const isFilterByType = Object.values(filter.type).some((item) => item === true);
 
-      const filtered = filterByPrice(filterData, filter.price.min, filter.price.max);
-      const normalizedData = normalizeData(filtered);
-      dispatch(setCatalogueData(normalizedData))
+
+    let filtered = filterData;
+
+    if (isFilterByPrice) {
+      filtered = filterByPrice(filterData, filter.price.min, filter.price.max);
     }
+
+    if (isFilterByType) {
+      const checkedTypes = Object.entries(filter.type).reduce((acc, [type, value]) => value === true ? [...acc, GuitarType[type].name] : acc, [])
+      filtered = filterByType(filtered, checkedTypes);
+    }
+
+    const normalizedData = normalizeData(filtered);
+    dispatch(setCatalogueData(normalizedData))
 
   }, [dispatch, filter, filterData]);
 
@@ -45,9 +57,7 @@ const Filter = () => {
           <FilterPrice inputs={PRICE.inputs} minCataloguePrice={cataloguePrice.min} maxCataloguePrice={cataloguePrice.max} />
         </FilterItem>
         <FilterItem name={GUITAR_TYPE.name} legend={GUITAR_TYPE.legend}>
-          {GUITAR_TYPE.checkboxes.map((checkbox, i) => (
-            <Checkbox key={i + 1} name={checkbox.name} label={checkbox.label} value={false} />
-          ))}
+          <FilterType checkboxes={GUITAR_TYPE.checkboxes} />
         </FilterItem>
         <FilterItem name={STRINGS.name} legend={STRINGS.legend}>
           {STRINGS.checkboxes.map((checkbox, i) => (

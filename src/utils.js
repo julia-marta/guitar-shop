@@ -53,7 +53,11 @@ export const sortItems = (items, type, order) => {
 };
 
 export const filterByPrice = (data, min, max) => {
-  console.log(min)
-  console.log(max)
+
   return data.filter(item => (min <= Number(item.price) && Number(item.price) <= max));
+}
+
+export const filterByType = (data, types) => {
+
+  return data.filter(item => (types.includes(item.type)));
 }
