@@ -17,7 +17,6 @@ const Showcase = ({guitars}) => {
     setTotalPages(pages);
     setCurrentPage(FIRST_PAGE_NUMBER);
     setGuitarsToShow(guitars.slice(0, CARDS_PER_PAGE));
-    console.log(`test`)
   }, [guitars]);
 
 

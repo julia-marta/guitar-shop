@@ -19,7 +19,7 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChangeInput: PropTypes.func.isRequired,
-  onBlurInput: PropTypes.func.isRequired,
+  onBlurInput: PropTypes.func,
 };
 
 export default Input;

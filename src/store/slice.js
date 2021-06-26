@@ -23,6 +23,8 @@ const initialState = {
     strings: {4: false, 6: false, 7: false, 12: false}
   },
   availableStrings: [4, 6, 7, 12],
+  promoCode: ``,
+  orderSum: 0,
   popUp: null,
   index: 0,
 };
@@ -64,6 +66,12 @@ const guitarShopSlice = createSlice({
       delete state.cartData[action.payload];
       state.index -= 1;
     },
+    setOrderSum(state, action) {
+      state.orderSum = action.payload;
+    },
+    setPromoCode(state, action) {
+      state.promoCode = action.payload;
+    },
   },
   extraReducers: {
     [getData.fulfilled]: (state, action) => {
@@ -79,6 +87,18 @@ const guitarShopSlice = createSlice({
 
 const Reducer = guitarShopSlice.reducer;
 
-export const {setCatalogueData, openPopUp, closePopUp, setSorting, setFilter, setAvailableStrings, addToCart, changeCount, deleteFromCart} = guitarShopSlice.actions;
+export const {
+    setCatalogueData,
+    openPopUp,
+    closePopUp,
+    setSorting,
+    setFilter,
+    setAvailableStrings,
+    addToCart,
+    changeCount,
+    deleteFromCart,
+    setOrderSum,
+    setPromoCode
+  } = guitarShopSlice.actions;
 
 export default Reducer;

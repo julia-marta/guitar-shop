@@ -26,10 +26,21 @@
 }
 
 .order__promo-wrapper {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.order__promo-error {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.9px;
+  color: $index;
 }
 
 .order__promo-input {
@@ -37,7 +48,15 @@
   width: 170px;
   height: 36px;
   margin-right: 33px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   border: 2px solid $header-background;
+
+  &--error {
+    border-color: $index;
+  }
 }
 
 .order__button {

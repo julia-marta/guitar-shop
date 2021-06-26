@@ -63,6 +63,8 @@ export const FIRST_PAGE_NUMBER = 1;
 
 export const ALL_STRINGS = [4, 6, 7, 12];
 
+export const PROMOCODES = [`GITARAHIT`, `SUPERGITARA`, `GITARA2020`];
+
 export const NavigationButton = {
   PREVIOUS: `Назад`,
   NEXT: `Далее`,

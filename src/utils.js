@@ -31,8 +31,31 @@ export const getStarsCount = (reviewsCount) => {
   return Math.round((reviewsCount / 10) * 1.7);
 }
 
-export const getTotalSum = (items) => {
-  const total = items.reduce((total, {price, count}) => total + (Number(price) * count), 0);
+export const getTotalSum = (items, promocode) => {
+
+  let total = items.reduce((total, {price, count}) => total + (Number(price) * count), 0);
+
+  if (promocode) {
+
+    let discount;
+
+    switch(promocode) {
+      case `GITARAHIT`:
+        discount = total * 0.1;
+      break;
+      case `SUPERGITARA`:
+        discount = 700;
+      break;
+      case `GITARA2020`:
+        discount = total * 0.3 > 3500 ? 3500 : total * 0.3;
+      break;
+      default:
+        return discount;
+    }
+
+    total = total - discount;
+  }
+
   return total;
 }
 
