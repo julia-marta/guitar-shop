@@ -1,5 +1,6 @@
 import {createSlice,  createAsyncThunk} from '@reduxjs/toolkit';
 import axios from "axios";
+import {normalizeData} from '../utils';
 
 const BASE_URL = `https://sheet.best/api/sheets/8abd9b09-fc15-4b7a-83bd-c3f59a75e7f5`;
 
@@ -75,10 +76,8 @@ const guitarShopSlice = createSlice({
   },
   extraReducers: {
     [getData.fulfilled]: (state, action) => {
-      const normalizedData = action.payload.reduce((result, item, index) => {
-        result[index + 1] = item;
-        return result;
-      }, {});
+      const normalizedData = normalizeData(action.payload);
+
       state.guitarData = normalizedData;
       state.catalogueData = normalizedData;
     },

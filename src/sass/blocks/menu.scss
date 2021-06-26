@@ -12,6 +12,14 @@
     align-items: center;
   }
 
+  &--main {
+    width: 62%;
+  }
+
+  &--user {
+    width: 19%;
+  }
+
   &--social {
     grid-row-start: 2;
     grid-column-start: 1;
@@ -38,7 +46,7 @@
 }
 
 .menu--main .menu__item {
-  margin-right: 40px;
+  margin-right: 8.5%;
   line-height: 20px;
   letter-spacing: 1.05px;
 
@@ -50,10 +58,10 @@
 .menu--user .menu__item {
   width: 40px;
   height: 40px;
-  margin-right: 10px;
+  margin-right: 6.9%;
 
   &:last-child {
-    margin-right: 4px;
+    margin-right: 0;
   }
 }
 

@@ -17,8 +17,6 @@
 }
 
 .catalogue__filter {
-  min-width: 208px;
-  margin-right: 32px;
   padding-top: 1px;
 }
 
@@ -33,7 +31,7 @@
 
 .catalogue__showcase {
   box-sizing: border-box;
-  width: 700px;
+  width: 74.45%;
 }
 
 .catalogue__sorting {
@@ -100,11 +98,11 @@
 }
 
 .catalogue__item {
-  margin-right: 20px;
+  margin-right: 2.85%;
   margin-bottom: 30px;
 
   &:nth-child(3n+2) {
-    margin-right: 19px;
+    margin-right: 2.75%;
   }
 
   &:nth-child(3n) {

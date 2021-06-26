@@ -34,7 +34,7 @@
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: auto 1fr;
-  gap: 52px 122px;
+  gap: 52px 13%;
   align-items: flex-start;
   justify-content: flex-start;
 
@@ -74,6 +74,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
   padding-top: 21px;
   font-size: 10px;
   line-height: 12px;
@@ -81,15 +82,15 @@
 }
 
 .footer__navigation-item {
-   margin-right: 38px;
+   margin-right: 5.4%;
 
    &:first-child {
-    margin-right: 20px;
+    margin-right: 2.8%;
     letter-spacing: 0.2px;
    }
 
   &:last-child {
-    margin-right: 10px;
+    margin-right: 1.4%;
     margin-left: auto;
   }
 }

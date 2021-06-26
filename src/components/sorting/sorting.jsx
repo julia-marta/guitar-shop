@@ -35,7 +35,6 @@ const Sorting = () => {
   const handleSortingToggleItem = useCallback(
     (evt) => {
       evt.preventDefault();
-      console.log(evt.target.id)
 
       switch(evt.target.id) {
         case SortingOrder.DESCENDING.type:
