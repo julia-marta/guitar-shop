@@ -18,8 +18,8 @@ const FilterType = ({checkboxes}) => {
 
   return (
       <>
-        {checkboxes.map((checkbox, i) => (
-          <Checkbox key={i + 1} name={checkbox.name} label={checkbox.label}
+        {checkboxes.map((checkbox) => (
+          <Checkbox key={checkbox.name} name={checkbox.name} label={checkbox.label}
             value={filter.type[checkbox.name]} onChangeCheckbox={handleCheckboxChange} />
         ))}
       </>

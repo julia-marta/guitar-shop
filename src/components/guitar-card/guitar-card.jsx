@@ -30,8 +30,8 @@ const GuitarCard = ({guitar}) => {
       </div>
       <div className="guitar__wrapper guitar__rating">
         <ul className="guitar__star-list">
-          {STARS.map((_star, i) => (
-            <li key={i + 1} className="guitar__star">
+          {STARS.map((star, i) => (
+            <li key={star} className="guitar__star">
               {i < rating ? <Icon icon={IconType.STAR} /> : <Icon icon={IconType.STAR_EMPTY} /> }
             </li>
           ))}

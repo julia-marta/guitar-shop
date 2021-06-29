@@ -13,8 +13,8 @@ const FilterPrice = ({inputs, minCataloguePrice, maxCataloguePrice}) => {
   const minPlaceholder = parseStringToLocaleString(minCataloguePrice);
   const maxPlaceholder = parseStringToLocaleString(maxCataloguePrice);
 
-  const isMinPriceMoreThanMaxPrice = filter.price.min && (filter.price.max || filter.price.max === 0) && filter.price.min > filter.price.max;
-  const isMinPriceLessThanMinCataloguePrice = (filter.price.min || filter.price.min === 0) && filter.price.min < minCataloguePrice;
+  const isMinPriceMoreThanMaxPrice = filter.price.min && filter.price.max && filter.price.min > filter.price.max;
+  const isMinPriceLessThanMinCataloguePrice = filter.price.min && filter.price.min < minCataloguePrice;
   const isMaxPriceMoreThanMaxCataloguePrice = filter.price.max && filter.price.max > maxCataloguePrice;
 
   const handleInputChange = useCallback(
@@ -61,8 +61,8 @@ const FilterPrice = ({inputs, minCataloguePrice, maxCataloguePrice}) => {
 
   return (
       <>
-        {inputs.map((input, i) => (
-          <Input key={i + 1} className={`filter__input`} name={input.name} label={input.label}
+        {inputs.map((input) => (
+          <Input key={input.name} className={`filter__input`} name={input.name} label={input.label}
             value={filter.price[input.name] > 0 ? parseStringToLocaleString(filter.price[input.name]) : filter.price[input.name] === 0 ? `0` : ``}
             placeholder={input.name === `min` ? minPlaceholder : maxPlaceholder} onChangeInput={handleInputChange} onBlurInput={handleInputBlur} />
         ))}

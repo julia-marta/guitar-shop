@@ -42,18 +42,18 @@
     position: absolute;
     content: "";
     top: -146px;
-    left: -65px;
-    width: 884px;
+    left: 0;
+    width: 819px;
     height: 295px;
     background-image: url("../../img/image_footer.png");
-    background-position: top left;
+    background-position: top right;
     background-repeat: no-repeat;
     background-color: transparent;
     z-index: -1;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/image_footer@2x.png");
-      background-size: 884px auto;
+      background-size: auto 295px;
     }
   }
 }

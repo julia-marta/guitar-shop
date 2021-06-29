@@ -12,8 +12,8 @@ const Footer = ({isMain}) => {
         <Logo type={LogoType.FOOTER} isMain={isMain} />
         <Menu type={`social`} items={SOCIAL_MENU_ITEMS} isIconsOnly={true} />
         <ul className="footer__navigation">
-          {FOOTER_MENU_ITEMS.map((item, i) => (
-            <li key ={i + 1} className="footer__navigation-item">
+          {FOOTER_MENU_ITEMS.map((item) => (
+            <li key ={item.type} className="footer__navigation-item">
               <h3 className="footer__navigation-title">{item.title}</h3>
               {item.text ?
               <Menu type={item.type} items={item.text} isText={true} /> :

@@ -36,7 +36,7 @@ const Pagination = ({currentPage, totalPages, onButtonClick}) => {
   );
 
   return (
-      totalPages > 0 && 
+      totalPages > 0 &&
       <ul className="catalogue__pagination pagination">
         {Object.values(pages).map((page, i) => (
           page ? <li key={i + 1} className={`pagination__item ${page === PREVIOUS || page === NEXT ? `pagination__item--nav` : ``}`}>

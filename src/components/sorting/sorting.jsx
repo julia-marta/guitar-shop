@@ -55,8 +55,8 @@ const Sorting = () => {
         <Menu type={`sorting`} items={SORTING_ITEMS} activeItem={sorting.type && SortingType[sorting.type.toUpperCase()].title} 
           onItemClick={handleSortingMenuItem} />
         <div className="catalogue__sorting-toggles">
-          {SORTING_TOGGLE_ITEMS.map((item, i) => (
-        <button key ={i + 1} id={item.type} className={`catalogue__sorting-toggle ${sorting.order && sorting.order === item.type ? `catalogue__sorting-toggle--active` : ``}`} 
+          {SORTING_TOGGLE_ITEMS.map((item) => (
+        <button key ={item.type} id={item.type} className={`catalogue__sorting-toggle ${sorting.order && sorting.order === item.type ? `catalogue__sorting-toggle--active` : ``}`} 
           type="button" aria-label={item.title} onClick={handleSortingToggleItem}>
           <Icon icon={IconType[`${item.icon.toUpperCase()}`]} />
         </button>

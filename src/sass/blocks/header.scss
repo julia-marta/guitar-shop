@@ -27,22 +27,23 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  // overflow: hidden;
 
   &::after {
     position: absolute;
     content: "";
     top: 52px;
-    right: -69px;
-    width: 894px;
+    right: 0;
+    width: 825px;
     height: 298px;
     background-image: url("../../img/image_header.png");
-    background-position: bottom right;
+    background-position: bottom left;
     background-repeat: no-repeat;
     background-color: transparent;
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../../img/image_header@2x.png");
-        background-size: 894px auto;
+        background-size: auto 298px;
       }
   }
 }

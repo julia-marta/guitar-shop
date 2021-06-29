@@ -8,7 +8,7 @@ const Guitars = ({items}) => {
     items.length > 0 ?
     <ul className="catalogue__list">
       {items.map((item, i) => (
-        <GuitarCard key ={i + 1} guitar={item} />
+        <GuitarCard key ={item.id} guitar={item} />
       ))}
       </ul> :
     <p className="catalogue__empty-message">Ничего не найдено</p>
