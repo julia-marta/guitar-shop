@@ -9,6 +9,7 @@ const PurchaseProduct = ({guitar, isPopUp}) => {
     <>
       <div className="purchase__image">
         <picture>
+          <source type="image/webp" srcSet={`guitars/${guitar.image}.webp 1x, guitars/${guitar.image}@2x.webp 2x`} />
           <img className="purchase__picture" src={`guitars/${guitar.image}.png`}
           srcSet={`guitars/${guitar.image}@2x.png 2x`} width="48" height="124" alt={`Фотография гитары ${guitar.title}`}/>
         </picture>

@@ -24,6 +24,7 @@ const GuitarCard = ({guitar}) => {
     <li className="catalogue__item guitar">
       <div className="guitar__wrapper guitar__image">
         <picture>
+          <source type="image/webp" srcSet={`guitars/${guitar.image}.webp 1x, guitars/${guitar.image}@2x.webp 2x`} />
           <img className="guitar__picture" src={`guitars/${guitar.image}.png`}
           srcSet={`guitars/${guitar.image}@2x.png 2x`} width="68" height="190" alt={`Фотография гитары ${guitar.title}`}/>
         </picture>

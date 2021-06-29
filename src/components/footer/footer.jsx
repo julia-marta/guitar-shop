@@ -4,11 +4,11 @@ import Logo from '../logo/logo';
 import Menu from '../menu/menu';
 import {SOCIAL_MENU_ITEMS, FOOTER_MENU_ITEMS, LogoType} from '../../const';
 
-const Footer = ({isMain}) => {
+const Footer = ({isMain, isWebPSupport}) => {
 
   return (
     <footer className="footer">
-      <div className="footer__wrapper container">
+      <div className={`footer__wrapper ${isWebPSupport ? `footer__wrapper--webp` : `footer__wrapper--no-webp`} container`}>
         <Logo type={LogoType.FOOTER} isMain={isMain} />
         <Menu type={`social`} items={SOCIAL_MENU_ITEMS} isIconsOnly={true} />
         <ul className="footer__navigation">
@@ -28,6 +28,7 @@ const Footer = ({isMain}) => {
 
 Footer.propTypes = {
   isMain: PropTypes.bool,
+  isWebPSupport: PropTypes.bool,
 };
 
 export default Footer;

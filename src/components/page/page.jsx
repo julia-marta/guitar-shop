@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
+import {useWebPSupportCheck} from "react-use-webp-support-check";
 import {closePopUp} from '../../store/slice';
 import Header from '../header/header';
 import Main from '../main/main';
@@ -12,6 +13,7 @@ import {PageType, PopUpType, Key} from '../../const';
 
 const Page = ({type}) => {
 
+  const isWebPSupport = useWebPSupportCheck();
   const isMain = type === PageType.MAIN;
   const popUp = useSelector((state) => state.popUp);
   const dispatch = useDispatch();
@@ -37,11 +39,11 @@ const Page = ({type}) => {
 
   return (
     <>
-      <Header isMain={isMain} />
+      <Header isMain={isMain} isWebPSupport={isWebPSupport} />
       <Main type={type} isMain={isMain}>
         {isMain ? <Catalogue /> : <Cart />}
       </Main>
-      <Footer isMain={isMain} />
+      <Footer isMain={isMain} isWebPSupport={isWebPSupport} />
       {popUp &&
         <PopUp type={PopUpType[popUp.name].type} title={PopUpType[popUp.name].title}
         buttons={PopUpType[popUp.name].buttons} productId={popUp.product} />}

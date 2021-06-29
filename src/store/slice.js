@@ -30,7 +30,7 @@ export const getData = createAsyncThunk('guitar-shop/getData',  async () => {
 });
 
 const cartData = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : {};
-const index = localStorage.getItem('index') ? localStorage.getItem('index') : 0;
+const index = localStorage.getItem('index') ? Number(localStorage.getItem('index')) : 0;
 
 const initialState = {
   guitarData: {},

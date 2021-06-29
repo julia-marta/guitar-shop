@@ -45,15 +45,29 @@
     left: 0;
     width: 819px;
     height: 295px;
-    background-image: url("../../img/image_footer.png");
     background-position: top right;
     background-repeat: no-repeat;
     background-color: transparent;
     z-index: -1;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/image_footer@2x.png");
       background-size: auto 295px;
+    }
+  }
+
+  &--no-webp::before {
+    background-image: url("../../img/image_footer.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/image_footer@2x.png");
+    }
+  }
+
+  &--webp::before {
+    background-image: url("../../img/image_footer.webp");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/image_footer@2x.webp");
     }
   }
 }
