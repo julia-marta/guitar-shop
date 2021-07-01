@@ -10,6 +10,7 @@ body {
   line-height: 16px;
   color: $main-text;
   background-color: $main-background;
+  overflow-x: hidden;
 }
 
 a {

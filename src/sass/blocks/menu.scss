@@ -21,6 +21,7 @@
   }
 
   &--social {
+    max-width: 118px;
     grid-row-start: 2;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -49,6 +50,7 @@
   margin-right: 8.5%;
   line-height: 20px;
   letter-spacing: 1.05px;
+  white-space: nowrap;
 
   &:last-child {
     margin-right: 0;
@@ -56,8 +58,8 @@
 }
 
 .menu--user .menu__item {
-  width: 40px;
-  height: 40px;
+  // width: 40px;
+  // height: 40px;
   margin-right: 6.9%;
 
   &:last-child {
@@ -76,9 +78,11 @@
   width: 24px;
   height: 24px;
   margin-right: 23px;
+  margin-bottom: 12px;
   opacity: 0.65;
 
-  &:last-child {
+  &:last-child,
+  &:nth-child(3n) {
     margin-right: 0;
   }
 }
@@ -120,8 +124,15 @@
   }
 }
 
+.menu--user .menu__link{
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
 .menu--main .menu__link,
-.menu--user .menu__link svg  {
+.menu--user .menu__link {
 
   &:hover,
   &:focus,

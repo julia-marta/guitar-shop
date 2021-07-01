@@ -5,7 +5,7 @@ import {changeCount, openPopUp} from '../../store/slice';
 import PurchaseProduct from '../purchase-product/purchase-product';
 import Icon from '../icon/icon';
 import Button from '../button/button';
-import {parseStringToLocaleString, isNumbersOnly} from '../../utils';
+import {parseStringToLocaleString, isNumbersOnly, isNullFirst} from '../../utils';
 import {IconType, ButtonType, ControlButton, AppRoute, RUB_SYMBOL, PopUpType} from '../../const';
 
 const MIN_COUNT = 1;
@@ -20,6 +20,12 @@ const PurchaseCard = ({guitar, isEmptyCard}) => {
 
         if (!isNumbersOnly(evt.target.value)) {
           dispatch(changeCount({id: guitar.id, count: MIN_COUNT}));
+          return;
+        }
+
+        if (isNullFirst(evt.target.value)) {
+          const correctValue = evt.target.value.replace(/^0+/, ``);
+          dispatch(changeCount({id: guitar.id, count: Number(correctValue)}));
           return;
         }
 
@@ -93,7 +99,7 @@ const PurchaseCard = ({guitar, isEmptyCard}) => {
           <div className="purchase__quantity">
             <button id="decrease" className="purchase__сontrol purchase__сontrol--decrease" type="button" aria-label="Уменьшить" onClick={handleControlClick} />
             <label className="visually-hidden" htmlFor="quantity">Введите количество</label>
-            <input className="purchase__input" type="number" id="quantity" name="quantity" value={guitar.count}
+            <input className="purchase__input" type="text" id="quantity" name="quantity" value={guitar.count}
               onChange={handleInputChange} onBlur={handleInputBlur} />
             <button id="increase" className="purchase__сontrol purchase__сontrol--increase" type="button" aria-label="Увеличить" onClick={handleControlClick} />
           </div>

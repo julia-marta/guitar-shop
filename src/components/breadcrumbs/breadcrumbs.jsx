@@ -11,8 +11,7 @@ const Breadcrumbs = ({items}) => {
         {items.map((item, i) => (
           <li key ={i + 1} className="breadcrumbs__item">
             {i === (items.length - 1) ?
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <a className="breadcrumbs__link" href="#">{item}</a> :
+            <span className="breadcrumbs__link">{item}</span> :
             <>
               <Link className="breadcrumbs__link" to={AppRoute.ROOT}>{item}</Link>
               <Icon icon={IconType.ARROW} />

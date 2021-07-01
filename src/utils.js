@@ -27,6 +27,10 @@ export const isNumbersOnly = (value) => {
   return (/^[0-9 ]*$/.test(value));
 };
 
+export const isNullFirst = (value) => {
+  return(/^0/.test(value)) && value.length > 1;
+}
+
 export const getStarsCount = (reviewsCount) => {
   return Math.round((reviewsCount / 10) * 1.7);
 }
