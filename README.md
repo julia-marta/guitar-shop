@@ -1,6 +1,9 @@
 # Guitar Shop: магазин гитар
 
-:rocket: Проект выполняется в Акселераторе HTML Academy.
+:rocket: Проект выполнен в Акселераторе HTML Academy.
+
+Для реализации получения данных из Google таблиц напрямую в store использован парсер [Papa Parse](https://www.papaparse.com)
+___
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
