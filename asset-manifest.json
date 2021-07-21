@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/guitar-shop/static/css/main.d520c6fb.chunk.css",
-    "main.js": "/guitar-shop/static/js/main.0619cd09.chunk.js",
-    "main.js.map": "/guitar-shop/static/js/main.0619cd09.chunk.js.map",
+    "main.js": "/guitar-shop/static/js/main.3de9091e.chunk.js",
+    "main.js.map": "/guitar-shop/static/js/main.3de9091e.chunk.js.map",
     "runtime-main.js": "/guitar-shop/static/js/runtime-main.b56e5862.js",
     "runtime-main.js.map": "/guitar-shop/static/js/runtime-main.b56e5862.js.map",
-    "static/js/2.7cbe8f54.chunk.js": "/guitar-shop/static/js/2.7cbe8f54.chunk.js",
-    "static/js/2.7cbe8f54.chunk.js.map": "/guitar-shop/static/js/2.7cbe8f54.chunk.js.map",
+    "static/js/2.f3a5a501.chunk.js": "/guitar-shop/static/js/2.f3a5a501.chunk.js",
+    "static/js/2.f3a5a501.chunk.js.map": "/guitar-shop/static/js/2.f3a5a501.chunk.js.map",
     "index.html": "/guitar-shop/index.html",
     "static/css/main.d520c6fb.chunk.css.map": "/guitar-shop/static/css/main.d520c6fb.chunk.css.map",
-    "static/js/2.7cbe8f54.chunk.js.LICENSE.txt": "/guitar-shop/static/js/2.7cbe8f54.chunk.js.LICENSE.txt",
+    "static/js/2.f3a5a501.chunk.js.LICENSE.txt": "/guitar-shop/static/js/2.f3a5a501.chunk.js.LICENSE.txt",
     "static/media/style.scss": "/guitar-shop/static/media/image_header@2x.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.b56e5862.js",
-    "static/js/2.7cbe8f54.chunk.js",
+    "static/js/2.f3a5a501.chunk.js",
     "static/css/main.d520c6fb.chunk.css",
-    "static/js/main.0619cd09.chunk.js"
+    "static/js/main.3de9091e.chunk.js"
   ]
 }
